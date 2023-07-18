@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "classic",
+        "checkJs": false,
+        "module": "CommonJS",
+        "target": "ES6",
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["src/*"],
+            "@components/*": ["src/components/*"],
+            "@assets/*":["src/assets/*"],
+            "@api/*":["src/api/*"]
+        }
+    },
+    "exclude": ["dist", "node_modules", "build"]
+}

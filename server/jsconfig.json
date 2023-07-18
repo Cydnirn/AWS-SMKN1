@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "node",
+        "checkJs": false,
+        "module": "CommonJS",
+        "target": "ES6",
+        "baseUrl": "./",
+        "paths": {
+            "$dependency" : ["./dependency.js"],
+            "$model/*":["model/*"],
+            "$routes/*":["routes/*"],
+            "$controller/*":["controller/*"],
+            "$modules/*":["modules/*"],
+            "$storage/*":["storage/*"]
+        }
+    },
+    "exclude": ["dist", "node_modules"]
+}
