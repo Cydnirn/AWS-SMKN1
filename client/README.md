@@ -6,6 +6,11 @@ Install semua dependecies terlebih dahulu
 npm i
 ```
 
+Buat file .env untuk mengatur koneksi ke backend
+```bash
+API_URL=URL_SERVER_ANDA
+```
+
 
 Untuk memulai client, gunakan script start dari npm
 
@@ -13,7 +18,10 @@ Untuk memulai client, gunakan script start dari npm
 npm start
 ```
 
-Buat file .env untuk mengatur koneksi ke backend
+Untuk build aplikasi React, gunakan script build
+
 ```bash
-API_URL=URL_SERVER_ANDA
+npm run build
 ```
+
+Lalu pindahkan semua file di dalam folder build ke dalam folder konfigurasi NGINX ataupun APACHE2
