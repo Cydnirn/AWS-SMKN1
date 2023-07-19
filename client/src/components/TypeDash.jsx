@@ -9,6 +9,9 @@ function TypeDash(props) {
         async function initType() {
             try {
                 const res = await axios.get("/type/all", {});
+                if (res?.data?.message?.data.message.data.length == 0) {
+                    await axios.post("/", {});
+                }
                 setTypeDash(res?.data?.message?.data);
             } catch (err) {
                 await axios.post("/", {});
@@ -18,12 +21,14 @@ function TypeDash(props) {
         return () => clearTimeout(time);
     });
     return (
-        <Card $width="15%">
+        <Card $width='15%'>
             <h2>Total Type</h2>
             {typeDash.map((type) => {
                 return (
                     <div key={type._id}>
-                        <p>{type._id} : {type.totalMember}</p>
+                        <p>
+                            {type._id} : {type.totalMember}
+                        </p>
                     </div>
                 );
             })}

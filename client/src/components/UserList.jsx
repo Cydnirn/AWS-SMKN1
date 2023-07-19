@@ -38,7 +38,7 @@ function UserList(props) {
                 console.log(err?.response?.data);
             }
         }
-        const time = setTimeout(getUsers, 2000);
+        const time = setTimeout(getUsers, 1000);
         return () => clearTimeout(time);
     });
 
