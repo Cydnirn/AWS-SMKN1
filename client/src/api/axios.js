@@ -21,5 +21,5 @@ axios.interceptors.response.use(
 
 export default axios.create({
     baseURL: BASE_URL,
-    //headers: { "ngrok-skip-browser-warning": true },
+    headers: { "Access-Control-Allow-Origin": BASE_URL },
 });
