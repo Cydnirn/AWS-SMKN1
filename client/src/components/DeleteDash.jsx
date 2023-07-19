@@ -32,7 +32,7 @@ function FormInsert(props) {
             });
             setIsValid(true);
         } catch (err) {
-            console.log(err);
+            console.log(err?.response?.response);
             setIsError(true);
         }
     }

@@ -7,8 +7,12 @@ const Card = styled.div`
     color: #1b1b1b;
     background-color: ${(props) =>
         props.$bgcolor ? props.$bgcolor : "#FAFAFA"};
-    box-shadow: ${(props) => (props.$boxShadow ? props.$boxShadow : "0px 15px 25px 1px rgba(0, 0, 0, 0.15);")};
+    box-shadow: ${(props) =>
+        props.$boxShadow
+            ? props.$boxShadow
+            : "0px 15px 25px 1px rgba(0, 0, 0, 0.15);"};
     padding: ${(props) => (props.$padding ? props.$padding : "1rem")};
+    width: ${(props) => (props.$width ? props.$width : "")};
 `;
 
 export default Card;

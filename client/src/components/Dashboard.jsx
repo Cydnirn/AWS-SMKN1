@@ -4,6 +4,8 @@ import Card from "@components/UI/Card";
 import FormInsert from "@components/FormInsert";
 
 function Dashboard(props) {
+    const { modalHandler } = props;
+
     useEffect(() => {
         async function initType() {
             const res = await axios.get("/type/all", {});
@@ -16,7 +18,7 @@ function Dashboard(props) {
     }, []);
     return (
         <Fragment>
-            <FormInsert />
+            <FormInsert modalHandler={modalHandler} />
         </Fragment>
     );
 }

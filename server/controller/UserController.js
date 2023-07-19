@@ -66,6 +66,7 @@ async function insertUser(req, res) {
 async function deleteUser(req, res) {
     try {
         const { id } = req.body;
+        console.log(id);
         let data = await User.findById(id, "type").lean().exec();
         if (!data) throw createError("User with that id doesn't exist", 404);
         let type = data.type;
@@ -73,7 +74,7 @@ async function deleteUser(req, res) {
         await Type.findByIdAndUpdate(type, {
             $pull: {
                 userList: {
-                    _id: id
+                    _id: id,
                 },
             },
             $inc: {
@@ -81,7 +82,7 @@ async function deleteUser(req, res) {
             },
         });
 
-        responseSuccess(res, 201, "User successfully created!");
+        responseSuccess(res, 201, "User successfully Deleted!");
     } catch (err) {
         responseFailed(res, err.statusCode, err.message);
     }

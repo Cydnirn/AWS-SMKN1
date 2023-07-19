@@ -10,14 +10,16 @@ const Button = styled.button`
     font-size: 0.8rem;
     font-weight: 500;
     transition: 0.5s ease-in-out;
+    max-height: 2.5rem;
+    margin: auto 0;
 
     &:disabled {
         border: 1px solid #858585;
         color: #858585;
     }
-    
+
     &:hover {
-        background-color: #2e2e2e;
+        background-color: ${(props) => (props.$isDelete ? "red" : "#2e2e2e")};
         color: #fafafa;
         transition: 0.5s ease-in-out;
     }

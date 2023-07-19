@@ -1,7 +1,6 @@
 import { useState, useEffect, Fragment } from "react";
 import axios from "@api/axios";
 import Card from "@components/UI/Card";
-import FormInsert from "@components/FormInsert";
 
 function TypeDash(props) {
     const [typeDash, setTypeDash] = useState([]);
@@ -15,16 +14,16 @@ function TypeDash(props) {
                 await axios.post("/", {});
             }
         }
-        const time = setTimeout(initType, 2500);
+        const time = setTimeout(initType, 1000);
         return () => clearTimeout(time);
     });
     return (
-        <Card>
+        <Card $width="15%">
+            <h2>Total Type</h2>
             {typeDash.map((type) => {
                 return (
                     <div key={type._id}>
-                        <p>{type._id}</p>
-                        <p>{type.totalMember}</p>
+                        <p>{type._id} : {type.totalMember}</p>
                     </div>
                 );
             })}

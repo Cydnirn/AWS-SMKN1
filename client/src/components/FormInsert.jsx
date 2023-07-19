@@ -14,10 +14,10 @@ const FormMain = styled.div`
 `;
 
 function FormInsert(props) {
+    const { modalHandler } = props;
+
     const [username, setUsername] = useState("");
     const [type, setType] = useState("IPA");
-    const [isError, setIsError] = useState(false);
-    const [isValid, setIsValid] = useState(false);
 
     function parentType(value) {
         setType((prev) => (prev = value));
@@ -27,24 +27,20 @@ function FormInsert(props) {
         e.preventDefault();
         console.log(username, type);
         try {
-            const res = await axios.post("/user", {
+            await axios.post("/user", {
                 username: username,
                 type: type,
             });
-            setIsValid(true);
+            modalHandler("Action success", "User inserted successfully");
         } catch (err) {
-            console.log(err);
-            setIsError(true);
+            //const message = err?.response?.data?.error.split(" ");
+            modalHandler("Action failed", err?.response?.data.error);
         }
     }
-    useEffect(() => {
-        console.log(isError);
-    }, [isError]);
 
     return (
         <Card>
             <FormMain>
-                {isError && <p>What the hell?</p>}
                 <p>Insert User</p>
                 <Form onSubmit={submitHandler}>
                     <Input
