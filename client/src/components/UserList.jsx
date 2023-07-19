@@ -5,7 +5,7 @@ import Card from "@components/UI/Card";
 import { Button } from "@components/UI/Button";
 
 const UserParent = styled.div`
-    min-width: 80%;
+    min-width: 80vh;
     overflow: auto;
     max-height: 40vh;
     gap: 3rem;

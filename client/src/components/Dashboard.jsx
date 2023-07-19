@@ -1,7 +1,11 @@
 import { useState, useEffect, Fragment } from "react";
 import axios from "@api/axios";
-import Card from "@components/UI/Card";
+import styled from "styled-components";
 import FormInsert from "@components/FormInsert";
+
+const DivCenter = styled.div`
+    margin: 0 auto;
+`;
 
 function Dashboard(props) {
     const { modalHandler } = props;
@@ -18,7 +22,9 @@ function Dashboard(props) {
     }, []);
     return (
         <Fragment>
-            <FormInsert modalHandler={modalHandler} />
+            <DivCenter>
+                <FormInsert modalHandler={modalHandler} />
+            </DivCenter>
         </Fragment>
     );
 }
