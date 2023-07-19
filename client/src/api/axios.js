@@ -21,6 +21,6 @@ axios.interceptors.response.use(
 
 export default axios.create({
     baseURL: BASE_URL,
-    headers: { "Access-Control-Allow-Origin": BASE_URL },
-    crossDomain: true,
+    //headers: { "Access-Control-Allow-Origin": BASE_URL },
+    //crossDomain: true,
 });
