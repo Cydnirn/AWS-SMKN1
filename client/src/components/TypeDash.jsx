@@ -8,13 +8,13 @@ function TypeDash(props) {
     useEffect(() => {
         async function initType() {
             try {
-                const res = await axios.get("/type/all", {});
-                if (res?.data?.message?.data.message.data.length == 0) {
-                    await axios.post("/", {});
+                const res = await axios.get("/type/all");
+                if (!res?.data?.message?.data.length) {
+                    await axios.post("/init", {});
                 }
                 setTypeDash(res?.data?.message?.data);
             } catch (err) {
-                await axios.post("/", {});
+                await axios.post("/init", {});
             }
         }
         const time = setTimeout(initType, 1000);
